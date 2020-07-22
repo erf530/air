@@ -41,6 +41,7 @@ const App = () => {
   const [searchValue, setSearchValue] = useState<string>('');
   const [isLoading, setLoading] = useState(true);
 
+  // Create fake loading state to simulate api
   useEffect(() => {
     let timer1 = setTimeout(() => setLoading(false), 1000);
     return () => {
@@ -53,7 +54,7 @@ const App = () => {
   };
 
   // Provides ability to add additional searchable fields in the future
-  // Including name and emaol for now
+  // Including name and email for now
   const searchFields = (searchValue: string, fields: string[]) => {
     let value = searchValue.toLowerCase();
     return fields.some((field) => {

@@ -6,6 +6,7 @@ const styledForm = css`
   margin-top: 25px;
   margin-bottom: 30px;
 `;
+
 // https://www.w3.org/WAI/tutorials/forms/labels/#hiding-label-text
 const hidden = css`
   border: 0;
