@@ -39,8 +39,8 @@ type Props = {
 export const PeopleList = ({ results }: Props) => {
   return (
     <ul css={unorderedList}>
-      {results.map(({ id, name, email, avatar, description }: Person) => (
-        <li css={listItem} key={id}>
+      {results.map(({ id, name, avatar, description }: Person) => (
+        <li css={listItem} key={id} tabIndex={id}>
           <img src={avatar} alt={name} css={avatarImg} />
           <div css={contentContainer}>
             <h3>{name}</h3>
