@@ -1,3 +1,12 @@
+## Available Scripts
+
+run `npm install` and `npm start` to run.
+
+TO-DO:
+[] Add tests
+[] Add infinite scroll animations
+[] Refactor components out of main App has product scales
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
