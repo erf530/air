@@ -1,33 +1,51 @@
 import React from 'react';
-import styled from 'styled-components';
+import { css } from 'styled-components/macro';
 import { Person } from '../../types';
 
-// const Container = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   flex-direction: row;
-//   flex-wrap: wrap;
-// `;
+const unorderedList = css`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: unset;
+  margin-top: 18px;
+`;
 
-// const Avatar = styled.img`
-//   width: 90%;
-//   border-radius: 100%;
-//   margin: 15px;
-//   transition: all ease-in-out 0.25s;
-// `;
+const listItem = css`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 400px;
+  min-width: 100px;
+`;
+
+const avatarImg = css`
+  width: 30%;
+  height: 30%;
+  border-radius: 100%;
+  margin: 16px;
+  border: 1px solid black;
+`;
+
+const contentContainer = css`
+  width: 60%;
+`;
+
 type Props = {
   results: Person[];
 };
 
 export const PeopleList = ({ results }: Props) => {
   return (
-    <ul>
+    <ul css={unorderedList}>
       {results.map(({ id, name, email, avatar, description }: Person) => (
-        <li key={id}>
-          <p>{name}</p>
-          <p>{email}</p>
-          <p>{description}</p>
-          <img height="100" width="100" src={avatar} alt={name} />
+        <li css={listItem} key={id}>
+          <img src={avatar} alt={name} css={avatarImg} />
+          <div css={contentContainer}>
+            <h3>{name}</h3>
+            <p>{description}</p>
+          </div>
         </li>
       ))}
     </ul>
